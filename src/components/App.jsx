@@ -1,8 +1,8 @@
 import React from "react";
-import Keeper from "./keeper/Keeper";
+import Contact from "./contact/Contact";
 
 function App() {
-  return <Keeper />;
+  return <Contact />;
 }
 
 export default App;

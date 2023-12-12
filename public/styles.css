@@ -59,3 +59,25 @@ footer p {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: #b2c6e4;
+    margin: 50px 0;
+    height: 200px;
+    box-shadow: 0 2px 5px #ccc;
+    text-align: left;
+  }
+
+  .card img {
+    margin: 30px 20px 0 0;
+  }
+
+  .circle-img {
+    border-radius: 50%;
+    border: 5px solid rgb(254, 235, 255);
+    width: 120px;
+    height: 120px;
+  }
