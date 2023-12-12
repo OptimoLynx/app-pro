@@ -1,8 +1,8 @@
 import React from "react";
-import Emoji from "./emoji/Emoj";
+import Keeper from "./keeper/Keeper";
 
 function App() {
-  return <Emoji />;
+  return <Keeper />;
 }
 
 export default App;

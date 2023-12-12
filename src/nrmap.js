@@ -88,3 +88,38 @@ const newNumber = numbers.findIndex(function (num) {
 });
 console.log(newNumber); */
 // console: [56]
+
+//EX6! Arrow Function
+// Method 1: Basic
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.map( (x) => {
+  return x * x;
+});
+console.log(newNumbers); */
+// console: [9. 3136, 4, 2304, 25]
+
+// Method 2: Map -Create a new array by doing something with each item in an array.
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.map( x => x * 2 );
+console.log(newNumbers); */
+// console: [9. 3136, 4, 2304, 25]
+
+// Method 3: Filter - Create a new array by keeping the items that return true.
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.filter( num => num < 10 );
+console.log(newNumbers); */
+
+// Method 4: Reduce
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.reduce( (accumulator, currentNumber ) => accumulator + currentNumber);
+console.log(newNumbers); */
+
+// Method 5: Find - find the first item that matches from an array.
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.find( num => num < 10 );
+console.log(newNumbers); */
+
+// Method 6: FindIndex - find the index of the first item that matches.
+/* var numbers = [3, 56, 2, 48, 5];
+const newNumbers = numbers.findIndex( num => num < 10 );
+console.log(newNumbers); */
