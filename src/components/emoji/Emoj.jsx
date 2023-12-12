@@ -9,7 +9,7 @@ function createEmoji(emo) {
       key={emo.id}
       emoji={emo.emoji}
       name={emo.name}
-      meaning={emo.meaning}
+      meaning={emo.meaning.substring(0, 100)}
     />
   );
 }
