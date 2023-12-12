@@ -1,5 +1,5 @@
 import React from "react";
-import * as cal from "../math";
+import * as cal from "../../math";
 
 function BasicMath() {
   return (

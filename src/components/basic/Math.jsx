@@ -1,5 +1,5 @@
 import React from "react";
-import * as pi from "../math";
+import * as pi from "../../math";
 
 function Math() {
   return (

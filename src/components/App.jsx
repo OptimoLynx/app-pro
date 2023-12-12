@@ -1,18 +1,10 @@
 import React from "react";
-import Heading from "./Heading";
-import Luck from "./Luck";
-import Name from "./Name";
-import Math from "./Math";
-import BasicMath from "./BasicMath";
+import Basic from "./basic/Basic";
 
 function App() {
   return (
     <div className="flex-container">
-      <Heading />
-      <Math />
-      <BasicMath />
-      <Luck />
-      <Name />
+      <Basic />
     </div>
   );
 }
