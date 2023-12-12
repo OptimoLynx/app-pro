@@ -1,12 +1,8 @@
 import React from "react";
-import Basic from "./basic/Basic";
+import Keeper from "./keeper/Keeper";
 
 function App() {
-  return (
-    <div className="flex-container">
-      <Basic />
-    </div>
-  );
+  return <Keeper />;
 }
 
 export default App;
