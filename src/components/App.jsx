@@ -1,8 +1,8 @@
 import React from "react";
-import Contact from "./contact/Contact";
+import Emoji from "./emoji/Emoj";
 
 function App() {
-  return <Contact />;
+  return <Emoji />;
 }
 
 export default App;
