@@ -1,8 +1,8 @@
 import React from "react";
-import Home from "./login/Home";
+import General from "./hook/General";
 
 function App() {
-  return <Home />;
+  return <General />;
 }
 
 export default App;
