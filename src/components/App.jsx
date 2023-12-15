@@ -1,8 +1,9 @@
 import React from "react";
-import General from "./hook/General";
+import Time from "./hook/Time";
+
 
 function App() {
-  return <General />;
+  return <Time />
 }
 
 export default App;
