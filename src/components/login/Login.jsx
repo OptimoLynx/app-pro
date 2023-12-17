@@ -8,7 +8,6 @@ function Login() {
 
   const [headingText, setHeading] = useState("Hello");
   const [isMouseOver, setMouseOver] = useState(false);
-  const [isMouseOut, setMouseOut] = useState(false);
 
   function handleClick() {
     setHeading("Submitted");
@@ -19,7 +18,7 @@ function Login() {
   }
 
   function handleMouseOut() {
-    setMouseOut(true);
+    setMouseOver(true);
   }
 
   /*   function handleChange(event) {
