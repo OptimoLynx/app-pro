@@ -11,15 +11,20 @@ function Todo() {
   }
 
   function addItem() {
-    setItems((preItem) => {
-      return [...preItem, inputText];
+    setItems((preItems) => {
+      return [...preItems, inputText];
     });
     setInputText("");
   }
 
-  function deleteItem() {
-    setInputText("");
-    setItems([]);
+  function deleteItem(id) {
+    setItems((preItems) => {
+      return preItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+    /*     setInputText("");
+    setItems([]); */
   }
 
   return (
@@ -38,8 +43,13 @@ function Todo() {
       </div>
       <div>
         <ul>
-          {items.map((todoItem) => (
-            <TodoItem key={todoItem.key} text={todoItem} />
+          {items.map((todoItem, index) => (
+            <TodoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
           ))}
         </ul>
       </div>
