@@ -1,8 +1,9 @@
 import React from "react";
-import Home from "./login/Home";
+import Time from "./hook/Time";
+
 
 function App() {
-  return <Home />;
+  return <Time />
 }
 
 export default App;
