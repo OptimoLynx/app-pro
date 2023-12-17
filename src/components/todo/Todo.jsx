@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
+import InputArea from "./InputArea";
 
 function Todo() {
-  const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
 
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-
-  function addItem() {
+  function addItem(inputText) {
     setItems((preItems) => {
       return [...preItems, inputText];
     });
-    setInputText("");
   }
 
   function deleteItem(id) {
@@ -32,15 +26,10 @@ function Todo() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
-        <button onClick={deleteItem}>
-          <span>Delete</span>
-        </button>
-      </div>
+      <InputArea onAdd={addItem} />
+      <button onClick={deleteItem}>
+        <span>Delete</span>
+      </button>
       <div>
         <ul>
           {items.map((todoItem, index) => (
