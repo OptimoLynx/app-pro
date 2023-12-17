@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import NoteCard from "./NoteCard";
-import notes from "../../notes";
+import CreateArea from "./CreateArea";
 
 function Note() {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes((preNotes) => {
+      return [...preNotes, newNote];
+    });
+  }
+
+  function deleteNote(id) {
+    setNotes((preNotes) => {
+      return preNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
-    <div>
-      {notes.map((noteItem) => (
-        <NoteCard
-          key={noteItem.key}
-          title={noteItem.title}
-          content={noteItem.content}
-        />
-      ))}
-    </div>
+    <>
+      <CreateArea onAdd={addNote} />
+      {notes.map((noteItem, index) => {
+        return (
+          <NoteCard
+            key={index}
+            id={index}
+            title={noteItem.title}
+            content={noteItem.content}
+            onDelete={deleteNote}
+          />
+        );
+      })}
+    </>
   );
 }
 
