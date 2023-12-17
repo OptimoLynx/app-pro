@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 
 function Login() {
-  const [fullName, setFullName] = useState({
-    fName: "",
-    lName: "",
-  });
+  /*  const [fullName, setFullName] = useState({
+      fName: "",
+      lName: "",
+    }); */
 
-  //const [headingText, setHeading] = useState("");
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFullName((preValue) => {
-      return {
-        ...preValue,
-        [name]: value,
-      };
-    });
+  const [headingText, setHeading] = useState("Hello");
+  const [isMouseOver, setMouseOver] = useState(false);
+  const [isMouseOut, setMouseOut] = useState(false);
+
+  function handleClick() {
+    setHeading("Submitted");
   }
+
+  function handleMouseOver() {
+    setMouseOver(true);
+  }
+
+  function handleMouseOut() {
+    setMouseOut(true);
+  }
+
+  /*   function handleChange(event) {
+      const { name, value } = event.target;
+      setFullName((preValue) => {
+        return {
+          ...preValue,
+          [name]: value,
+        };
+      });
+    } */
 
   /*    Ternary Operator 
     CONDITION ? DO IF TRUE : DO IF FALSE
@@ -25,9 +40,18 @@ function Login() {
 */
 
   return (
-    <>
-      <div className="container">
-        <form>
+    <div className="container">
+      <h1>{headingText} </h1>
+      <input type="text" placeholder="What's your name?" />
+      <button
+        style={{ backgroundColor: isMouseOver ? "black" : "white" }}
+        onClick={handleClick}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
+        Submit
+      </button>
+      {/*         <form>
           <input
             onChange={handleChange}
             type="text"
@@ -41,9 +65,8 @@ function Login() {
             value={fullName.lName}
           />
           <button type="submit">Submit</button>
-        </form>
-      </div>
-    </>
+        </form> */}
+    </div>
   );
 }
 
