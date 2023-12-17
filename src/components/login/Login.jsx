@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 
 function Login() {
-  const [name, setName] = useState("");
-  const [headingText, setHeading] = useState("");
+  const [contact, setContact] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+  });
 
   function handleChange(event) {
-    console.log(event.target.value);
-    setName(event.target.value);
+    const { name, value } = event.target;
 
-    /*       const { name, value } = event.target;
-      setFullName((preValue) => {
-        return {
-          ...preValue,
-          [name]: value,
-        };
-      }); */
+    //Spread Syntax/Operator
+    setContact((preValue) => {
+      return {
+        ...preValue,
+        [name]: value,
+      };
+    });
   }
 
   function handleClick(event) {
-    setHeading(name);
+    setContact(setContact);
 
     event.preventDefault();
   }
@@ -32,13 +34,28 @@ function Login() {
 
   return (
     <div className="container">
-      <h1> Hello {headingText} </h1>
+      <h1>
+        Hello {contact.fName} {contact.lName}
+      </h1>
+      <p>{contact.email}</p>
       <form onSubmit={handleClick}>
         <input
           onChange={handleChange}
+          name="fName"
           type="text"
-          placeholder="What's your name?"
-          value={name}
+          placeholder="First Name"
+        />
+        <input
+          onChange={handleChange}
+          name="lName"
+          type="text"
+          placeholder="Last Name"
+        />
+        <input
+          onChange={handleChange}
+          name="email"
+          type="text"
+          placeholder="Email"
         />
         <button onClick={handleClick}>Submit</button>
       </form>
